@@ -1,24 +1,33 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap");
+
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  font-family: sans-serif;
+  font-family: "Roboto Mono", monospace;
 }
 
+/* Needed for toogle nav */
 .hidden-nav {
   max-height: 0;
   transition: all 0.4s ease;
 }
+
 .hidden-nav.show {
   max-height: 500px;
   padding-top: 1rem;
   padding-bottom: 1rem;
 }
 
+/* Quick setup for unsplash dynamic background images */
 section {
   background-size: cover;
   background-attachment: fixed;
-  backdrop-filter: darken(1);
   scroll-margin-top: 66px; /* Offsets nav height when anchoring */
+}
+
+::selection {
+  background-color: rebeccapurple;
+  color: white;
 }

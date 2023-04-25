@@ -3,14 +3,13 @@
   <head>
     <title>Technical Test - Jumplinks Component</title>
     <meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="src/styles.css" />
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
 
   <body>
-    <section
-      class="bg-stone-300 min-h-screen mb-5 flex items-center justify-center"
-    >
+    <section class="bg-stone-300 min-h-screen mb-5 flex items-center justify-center">
       <h1 class="text-5xl bg-white/50 w-full text-center py-5">
         Technical Test - Jumplinks Component
       </h1>
@@ -20,21 +19,14 @@
       <nav class="sticky top-0 bg-black/80 text-white d-inline">
         <div class="container mx-auto flex justify-between items-center py-4">
           <div id="currentSection">Current Section</div>
-          <button
-            id="showNav"
-            class="transition-all border hover:bg-blue-900 hover:border-blue-400 px-4 py-1"
-          >
+          <button id="showNav" class="transition-all border hover:bg-blue-900 hover:border-blue-400 px-4 py-1">
             Show
           </button>
         </div>
 
         <div class="h-2 bg-blue-700" id="scrollProgress"></div>
 
-        <ul
-          class="hidden-nav columns-3 overflow-hidden container mx-auto"
-          id="hiddenNav"
-          aria-expanded="false"
-        >
+        <ul class="hidden-nav columns-3 overflow-hidden container mx-auto" id="hiddenNav" aria-expanded="false">
           <li class="d-inline">
             <a href="#sectionOne">Section One</a>
           </li>
@@ -53,63 +45,44 @@
         </ul>
       </nav>
 
-      <section
-        class="bg-stone-300 min-h-screen mb-5 flex items-center justify-center"
-        id="sectionOne"
-      >
+      <section class="bg-stone-300 min-h-screen mb-5 flex items-center justify-center" id="sectionOne">
         <h2 class="text-4xl bg-white/50 w-full text-center py-5">
           Section One
         </h2>
       </section>
 
-      <section
-        class="bg-stone-300 min-h-screen mb-5 flex items-center justify-center"
-        id="sectionTwo"
-      >
+      <section class="bg-stone-300 min-h-screen mb-5 flex items-center justify-center" id="sectionTwo">
         <h2 class="text-4xl bg-white/50 w-full text-center py-5">
           Section Two
         </h2>
       </section>
 
-      <section
-        class="bg-stone-300 min-h-screen mb-5 flex items-center justify-center"
-        id="sectionThree"
-      >
+      <section class="bg-stone-300 min-h-screen mb-5 flex items-center justify-center" id="sectionThree">
         <h2 class="text-4xl bg-white/50 w-full text-center py-5">
           Section Three
         </h2>
       </section>
 
-      <section
-        class="bg-stone-300 min-h-screen mb-5 flex items-center justify-center"
-        id="sectionFour"
-      >
+      <section class="bg-stone-300 min-h-screen mb-5 flex items-center justify-center" id="sectionFour">
         <h2 class="text-4xl bg-white/50 w-full text-center py-5">
           Section Four
         </h2>
       </section>
 
-      <section
-        class="bg-stone-300 min-h-screen mb-5 flex items-center justify-center"
-        id="sectionFive"
-      >
+      <section class="bg-stone-300 min-h-screen mb-5 flex items-center justify-center" id="sectionFive">
         <h2 class="text-4xl bg-white/50 w-full text-center py-5">
           Section Five
         </h2>
       </section>
     </div>
 
-    <section
-      class="bg-stone-300 min-h-screen mb-5 flex items-center justify-center"
-    >
+    <section class="bg-stone-300 min-h-screen mb-5 flex items-center justify-center">
       <h2 class="text-4xl bg-white/50 w-full text-center py-5">
         Section After Jumplinks One
       </h2>
     </section>
 
-    <section
-      class="bg-stone-300 min-h-screen mb-5 flex items-center justify-center"
-    >
+    <section class="bg-stone-300 min-h-screen mb-5 flex items-center justify-center">
       <h2 class="text-4xl bg-white/50 w-full text-center py-5">
         Section After Jumplinks Two
       </h2>
