@@ -24,7 +24,7 @@ body {
 section {
   background-size: cover;
   background-attachment: fixed;
-  scroll-margin-top: 66px; /* Offsets nav height when anchoring */
+  scroll-margin-top: 0; /* Offsets nav height when anchoring */
 }
 
 ::selection {

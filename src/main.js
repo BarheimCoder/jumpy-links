@@ -1,33 +1,45 @@
 window.addEventListener('scroll', () => {
   updateScrollProgress();
-  activeSection();
+  // activeSection();
 });
 
 // Updates the progress bar as the user scrolls
 function updateScrollProgress() {
-  const sectionScroll = document.body.scrollTop || document.documentElement.scrollTop;
-  const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-  const scrolled = (sectionScroll / height) * 100;
-	
-  document.getElementById('scrollProgress').style.width = scrolled + '%';
+  const wrapperOffset = document.querySelector('.jumpy-links').offsetTop; // 1914
+  const wrapperHeight = document.querySelector('.jumpy-links').clientHeight; // 4839
+  const currScroll = (document.body.scrollTop || document.documentElement.scrollTop) - wrapperOffset;
+  const totalScroll = document.documentElement.scrollHeight - wrapperHeight;
+  const pctScrolled = (currScroll / totalScroll) * 100;
+
+  console.log(wrapperHeight + ' | ' + wrapperOffset + ' | ' + totalScroll);
+
+  if (pctScrolled <= 100) {
+    document.getElementById('scrollProgress').style.width = pctScrolled + '%';
+  } else {
+    document.getElementById('scrollProgress').style.width = '100%';
+  }
 }
 
 // Updates the navigation relative to current section
-function activeSection() {
-  const navSections = document.querySelectorAll('.jumpy-links>section');
-  const currentScrollPos = document.documentElement.scrollTop || document.body.scrollTop;
+const entries = document.querySelectorAll('.jumpy-links>section h2');
 
-  navSections.forEach((elem, i) => {
-    const elemOffset = elem.offsetTop; // Distance from element's top to body's top
-    const elemHeight = elem.offsetHeight; // Elements height
-    const elemOffsetEnd = elemOffset + elemHeight; // Elements top distance + height to calculate the end
-
-    if (currentScrollPos > elemOffset && currentScrollPos < elemOffsetEnd) {
-      const elemTitle = elem.querySelector('h2').textContent;
-      document.getElementById('currentSection').innerHTML = elemTitle;
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(
+    (entry) => {
+      if (entry.isIntersecting) {
+        const elemTitle = entry.target.textContent;
+        document.getElementById('currentSection').innerHTML = elemTitle;
+      }
+    },
+    {
+      threshold: 1,
     }
-  });
-}
+  );
+});
+
+entries.forEach((entry) => {
+  observer.observe(entry);
+});
 
 // Simple nav toggle with aria attribute
 const navButton = document.getElementById('showNav');
